@@ -2,7 +2,15 @@ import { SAVE_INPUT_VALUE, CLEAR_INPUT_VALUE } from '../actions/actionTypes';
 
 const initialState = {
     information: {},
-    values: []
+    values: [
+        {
+            firstName: 'Felipe',
+            lastName: 'Moskado',
+            telephone: '43 9 1111-1111',
+            cpf: '111111111',
+            rg: '222222222'
+        }
+    ]
 };
 
 export const formReducer = (state = initialState, action) => {
@@ -10,7 +18,8 @@ export const formReducer = (state = initialState, action) => {
         case SAVE_INPUT_VALUE:
             return {
                 ...state,
-                information: action.payload
+                information: action.payload,
+                values: addValue(action.payload, state.values)
             };
         case CLEAR_INPUT_VALUE:
             return {
@@ -20,4 +29,9 @@ export const formReducer = (state = initialState, action) => {
         default:
             return state;
     }
+}
+
+const addValue = (value, values) => {
+    values.push(value)
+    return [...values];
 }
