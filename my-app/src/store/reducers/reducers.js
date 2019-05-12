@@ -1,20 +1,21 @@
 import { SAVE_INPUT_VALUE, CLEAR_INPUT_VALUE } from '../actions/actionTypes';
 
 const initialState = {
-    inputValue: ''
-  };
+    information: {},
+    values: []
+};
 
 export const formReducer = (state = initialState, action) => {
     switch (action.type) {
         case SAVE_INPUT_VALUE:
             return {
                 ...state,
-                inputValue: action.payload
+                information: action.payload
             };
         case CLEAR_INPUT_VALUE:
             return {
                 ...state,
-                inputValue: ''
+                information: ''
             };
         default:
             return state;

@@ -1,8 +1,8 @@
 import { SAVE_INPUT_VALUE, CLEAR_INPUT_VALUE } from './actionTypes';
 
-export const saveInputValue = value => ({
+export const saveInputValue = payload => ({
     type: SAVE_INPUT_VALUE,
-    payload: value
+    payload
 });
 
 export const clearInputValue = () => ({
