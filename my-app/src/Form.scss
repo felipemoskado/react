@@ -1,0 +1,34 @@
+.container {
+    &-page-form{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    &-form {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    &-actions {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.action {
+    &-save {
+        margin-right: 10px !important;
+        min-width: 10% !important;
+    }
+
+    &-clear {
+        min-width: 10% !important;
+    }
+}
+
+.value {
+    padding: 10px;
+}
