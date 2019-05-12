@@ -2,6 +2,7 @@ import React from 'react';
 
 import './Form.scss';
 import InputField from './Input-field'
+import CustomizedTable from './Table'
 
 class Form extends React.Component {
 
@@ -9,6 +10,7 @@ class Form extends React.Component {
     return (
       <div className="container-page-form">
         <InputField></InputField>
+        <CustomizedTable></CustomizedTable>
       </div>
     )
   }
