@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
-import { saveInputValue, clearInputValue } from './store/actions';
+import { saveInputValue, clearInputValue } from '../store/actions';
 import './Form.scss';
 
 class InputField extends React.Component {
@@ -34,7 +34,7 @@ class InputField extends React.Component {
   };
 
   render() {
-    const { clearAction, saveAction, data } = this.props;
+    const { clearAction, saveAction } = this.props;
     const { information } = this.state;
 
     return (
@@ -87,8 +87,6 @@ class InputField extends React.Component {
             Clear
             </Button>
         </div>
-        <span className="value">First name: {data.firstName}</span>
-        <span className="value">Last name: {data.lastName}</span>
     </form>
     )
   }

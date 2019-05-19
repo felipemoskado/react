@@ -1,8 +1,8 @@
 import React from 'react';
 
 import './Form.scss';
-import InputField from './Input-field'
-import CustomizedTable from './Table'
+import InputField from './crud-component/Input-field'
+import CustomizedTable from './crud-component/Table'
 
 class Form extends React.Component {
 
