@@ -1,40 +1,23 @@
-import { SAVE_INPUT_VALUE, CLEAR_INPUT_VALUE, UPDATE_INPUT_VALUE } from '../actions/actionTypes';
+import { 
+    GET_PRODUTOS
+} from '../actions/actionTypes';
 
 const initialState = {
-    values: [
-        {
-            firstName: 'Felipe',
-            lastName: 'Moskado',
-            telephone: '43 9 1111-1111',
-            cpf: '111111111',
-            rg: '222222222'
-        }
+    produtos: [
+        { id: 1, imagem: 'download.jpeg', descricao: 'Gato 1', valor: '400,00' },
+        { id: 2, imagem: 'download.jpeg', descricao: 'Gato 2', valor: '400,00' },
+        { id: 3, imagem: 'download.jpeg', descricao: 'Gato 3', valor: '400,00' },
+        { id: 4, imagem: 'gatos.png', descricao: 'Gato 4', valor: '400,00' },
+        { id: 5, imagem: 'gatos.png', descricao: 'Gato 5', valor: '400,00' },
+        { id: 6, imagem: 'gatos.png', descricao: 'Gato 6', valor: '400,00' }
     ]
 };
 
-export const formReducer = (state = initialState, action) => {
+export const produtoReducer = (state = initialState, action) => {
     switch (action.type) {
-        case SAVE_INPUT_VALUE:
-            return {
-                ...state,
-                values: addValue(action.payload, state.values)
-            };
-        case UPDATE_INPUT_VALUE:
-            return {
-                ...state,
-                values: addValue(action.payload, state.values)
-            }
-        case CLEAR_INPUT_VALUE:
-            return {
-                ...state,
-                information: ''
-            };
+        case GET_PRODUTOS:
+            return state.produtos;
         default:
             return state;
     }
-}
-
-const addValue = (value, values) => {
-    values.push(value)
-    return [...values];
 }

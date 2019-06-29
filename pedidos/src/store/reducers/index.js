@@ -1,6 +1,6 @@
-import { formReducer } from './reducers';
 import { combineReducers } from 'redux';
+import { produtoReducer } from './reducers';
 
 export const Reducers = combineReducers({
-    formState: formReducer
+    produtoState: produtoReducer
 });
