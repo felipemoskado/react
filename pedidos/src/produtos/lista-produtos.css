@@ -1,0 +1,21 @@
+.container-horizontal {
+    flex-flow: row wrap;
+    display: flex;
+    width: 100%;
+}
+
+.container-vertical {
+    flex-flow: column;
+    display: flex;
+    width: 100%;
+}
+
+.lista-produtos {
+    justify-content: center;
+}
+
+.flex {
+    text-align: center;
+    width: 30%;
+    margin: 10px
+}

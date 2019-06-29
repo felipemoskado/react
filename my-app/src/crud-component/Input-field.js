@@ -1,96 +1,76 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import FormControl from '@material-ui/core/FormControl';
+import Input from '@material-ui/core/Input';
+import InputLabel from '@material-ui/core/InputLabel';
 
 import { saveInputValue, clearInputValue } from '../store/actions';
-import './Form.scss';
+import '../Form.scss';
 
-class InputField extends React.Component {
-  state = {
-    information: {
-      firstName: '',
-      lastName: '',
-      telephone: '',
-      cpf: '',
-      rg: ''
-    }
+function InputField(props) {
+  
+  const handleChanges = event => {
+    console.log(event.target.value);
+    setfirstName(event.target.value);
   }
 
-  handleChange = name => event => {
-    this.setState({
-      information: {
-        ...this.state.information,
-        [name]: event.target.value
-      }
-    })
+  const handleChanges1 = event => {
+    console.log(event.target.value);
+    setLastName(event.target.value);
   }
 
-  keyDown = event => {
-    if (event.keyCode === KEY_CODE_ENTER) {
-      event.preventDefault();
-      this.props.saveAction(this.state.information);
-    }
-  };
+  const [firstName, setfirstName] = React.useState('Composed TextField');
+  const [lastName, setLastName] = React.useState('Composed TextField');
+  const { clearAction, saveAction } = props;
 
-  render() {
-    const { clearAction, saveAction } = this.props;
-    const { information } = this.state;
-
-    return (
-    <form className="container-form" noValidate autoComplete="off">
-        <TextField
-            label="First name"
-            value={information.firstName}
-            onKeyDown={this.keyDown}
-            onChange={this.handleChange('firstName')}
-        />
-        <TextField
-            label="Last name"
-            value={information.lastName}
-            onKeyDown={this.keyDown}
-            onChange={this.handleChange('lastName')}
-        />
-        <TextField
-            label="Telephone"
-            value={information.telephone}
-            onKeyDown={this.keyDown}
-            onChange={this.handleChange('telephone')}
-        />
-        <TextField
-            label="CPF"
-            value={information.cpf}
-            onKeyDown={this.keyDown}
-            onChange={this.handleChange('cpf')}
-        />
-        <TextField
-            label="RG"
-            value={information.rg}
-            onKeyDown={this.keyDown}
-            onChange={this.handleChange('rg')}
-        />
-        <div className="container-actions">
-        <Button
-            className="action-save"
-            variant="outlined"
-            color="primary"
-            onClick={() => saveAction(information)}
+  return (
+    <div>
+      <FormControl>
+        <InputLabel htmlFor="component-simple">First Name</InputLabel>
+        <Input id="component-simple" value={firstName} onChange={handleChanges} />
+      </FormControl>
+      <FormControl>
+        <InputLabel htmlFor="component-simple">Last Name</InputLabel>
+        <Input id="component-simple" value={lastName} onChange={handleChanges} />
+      </FormControl>
+      <div className="container-actions">
+        {/* <Button
+          className="action-save"
+          variant="outlined"
+          color="primary"
+          onClick={() => saveAction(information)}
         >
-            Save
+          Save
         </Button>
         <Button
-            className="action-clear"
-            variant="outlined"
-            color="primary"
-            onClick={() => clearAction()}
+          className="action-clear"
+          variant="outlined"
+          color="primary"
+          onClick={() => clearAction()}
         >
-            Clear
-            </Button>
-        </div>
-    </form>
-    )
-  }
+          Clear
+            </Button> */}
+      </div>
+    </div>
+  )
 }
+
+const handleChange = name => event => {
+  this.setState({
+    information: {
+      ...this.state.information,
+      [name]: event.target.value
+    }
+  })
+}
+
+const keyDown = event => {
+  if (event.keyCode === KEY_CODE_ENTER) {
+    event.preventDefault();
+    this.props.saveAction(this.state.information);
+  }
+};
 
 const KEY_CODE_ENTER = 13
 

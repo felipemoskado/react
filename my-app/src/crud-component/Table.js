@@ -35,6 +35,7 @@ const styles = theme => ({
   },
 });
 
+
 function CustomizedTable(props) {
   const { classes, datas } = props;
 
@@ -48,6 +49,7 @@ function CustomizedTable(props) {
             <CustomTableCell align="right">Telephone</CustomTableCell>
             <CustomTableCell align="right">CPF</CustomTableCell>
             <CustomTableCell align="right">RG</CustomTableCell>
+            <CustomTableCell align="right"></CustomTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
