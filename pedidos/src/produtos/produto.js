@@ -5,6 +5,7 @@ import './lista-produtos.js';
 
 const Produto = (props) => {
     const { produtos } = props;
+    
 
     return <div className="container-horizontal lista-produtos">
         {produtos.map(produto => (
@@ -14,8 +15,8 @@ const Produto = (props) => {
                     height="200"
                     width="100%">
                 </img>
-                <span>{produto.descricao}</span>
-                <span>R$ {produto.valor}</span>
+                <span>{produto.nome}</span>
+                <span>R$ {produto.preco}</span>
             </div>
         ))}
     </div>
