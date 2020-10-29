@@ -5,7 +5,7 @@ const Clients = (props) => {
     const { clients } = props;
 
     return clients.map(client => (
-        <div className="margin-left: 20px<br></br>">
+        <div>
             <h3>Cliente</h3>
             <span>Name: {client.name}</span>
             <br></br>
