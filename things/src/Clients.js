@@ -1,6 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+/**
+ * 
+ * Aqui tu faz a exibição do cliente com menus e bla bla
+ */
+
 const Clients = (props) => {
     const { clients } = props;
 

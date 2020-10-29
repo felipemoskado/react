@@ -33,6 +33,9 @@ const initialState = {
     ]
 };
 
+/**
+ * Aqui você deve disparar a aação de CLIENT_LIST para pegar o seu json de menus 
+ */
 export const clientReducer = (state = initialState, action) => {
     switch (action.type) {
         case CLIENT_LIST:
